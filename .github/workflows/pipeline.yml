@@ -103,6 +103,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: DigitalOcean App Platform deployment
+        if: ${{ github.event_name == 'push' }}
         uses: digitalocean/app_action@v1.1.6
         with:
           app_name: Practica2904
