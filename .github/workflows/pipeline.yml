@@ -106,5 +106,6 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         env:
           DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+          APP_ID: '11f3e3df-8dcd-42b1-bab7-c61d0009a48b'
         run: |
-          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $DIGITALOCEAN_TOKEN" https://api.digitalocean.com/v2/apps/11f3e3df-8dcd-42b1-bab7-c61d0009a48b/deployments
+          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $DIGITALOCEAN_TOKEN" https://api.digitalocean.com/v2/apps/$APP_ID/deployments
