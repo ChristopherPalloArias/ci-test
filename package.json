@@ -9,7 +9,7 @@
     "start": "node app.js",
     "test": "jest",
     "eslint": "eslint .",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --optimization.minimizer=\"TerserPlugin{test:/\\.js(\\?.*)?$/i, exclude:/\\.min\\.js$/g, terserOptions:{cache:true, parallel:true, sourceMap:false, compress:{drop_console:true}, mangle:{safari10:false}}}\"",
     "test:e2e": "npx cypress run"
   },
   "repository": {
@@ -47,11 +47,13 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "terser-webpack-plugin": "4.2.3"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
+    "mongoose": "^5.7.12",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
