@@ -106,4 +106,4 @@ jobs:
         uses: digitalocean/app_action@v1.1.5
         with:
           app_name: urchin-app
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} 
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }} 
